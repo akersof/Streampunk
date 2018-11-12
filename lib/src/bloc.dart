@@ -21,10 +21,10 @@ class Bloc<T> {
     return _controllers[name].input;
   }
 
-  void addInput<V>(String name, InputController<V> ctrl) {
+  void addInput<V>({@required String name, @required InputController<V> controller}) {
     if(_controllers.containsKey(name))
       throw "Controller $name already exists. Delete $name first.";
-    _controllers[name] = ctrl;
+    _controllers[name] = controller;
   }
 
   //output
@@ -36,10 +36,10 @@ class Bloc<T> {
     return _controllers[name].output;
   }
 
-  void addOutput<V>(String name, OutputController<V> ctrl) {
+  void addOutput<V>({@required String name, @required OutputController<V> controller}) {
     if(_controllers.containsKey(name))
       throw "Controller $name already exists. Delete $name first.";
-    _controllers[name] = ctrl;
+    _controllers[name] = controller;
   }
 
   ///close all our InputControllers and OutputControllers
