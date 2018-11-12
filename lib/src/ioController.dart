@@ -1,5 +1,9 @@
 import 'dart:async';
+import "package:meta/meta.dart";
 import 'package:rxdart/rxdart.dart';
+
+
+typedef Callback<T> = void Function(T);
 
 enum Direction {
   input,
@@ -17,8 +21,12 @@ abstract class IOController<T> {
 
 ///Input controller of our Bloc
 class InputController<T> extends IOController<T> {
+  final Callback onData;
   final _controller = StreamController<T>();
   final direction = Direction.input;
+  InputController({@required this.onData}) {
+    _controller.stream.listen(onData);
+  }
   Stream<T> get output => _controller.stream;
 }
 
