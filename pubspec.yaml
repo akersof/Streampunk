@@ -1,13 +1,14 @@
 name: streampunk
 description: A starting point for Dart libraries or applications.
-# version: 1.0.0
-# homepage: https://www.example.com
-# author: akersof <email@example.com>
+version: 0.0.1
+homepage: https://github.com/akersof/streampunk
+author: akersof <sofiane@kiwitch.com>
 
 environment:
   sdk: '>=2.0.0 <3.0.0'
 
-#dependencies:
+dependencies:
+  rxdart: ^0.19.0
 #  path: ^1.4.1
 
 dev_dependencies:
